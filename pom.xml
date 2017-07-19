@@ -67,6 +67,12 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.41</version>
         </dependency>
+        <!-- c3p0连接池 -->
+        <dependency>
+            <groupId>com.mchange</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>0.9.5-pre10</version>
+        </dependency>
         <!-- MyBatis Generator -->
         <!-- 官方说artifactId为mybatis-generator，但是并不行，研究决定了。。。 -->
         <dependency>
