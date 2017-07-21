@@ -9,7 +9,29 @@ public class User {
 
     private String salt;
 
-    private Boolean locked;
+    private Boolean locked = Boolean.FALSE;
+
+    public User(Long id, String username, String password, String salt, Boolean locked) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.salt = salt;
+        this.locked = locked;
+    }
+
+    public User() {
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", salt='" + salt + '\'' +
+                ", locked=" + locked +
+                '}';
+    }
 
     public Long getId() {
         return id;
@@ -49,5 +71,9 @@ public class User {
 
     public void setLocked(Boolean locked) {
         this.locked = locked;
+    }
+
+    public String getCredentialsSalt() {
+        return username + salt;
     }
 }

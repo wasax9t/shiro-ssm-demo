@@ -5,7 +5,7 @@
         <id column="role_id" jdbcType="BIGINT" property="roleId"/>
         <id column="permission_id" jdbcType="BIGINT" property="permissionId"/>
     </resultMap>
-    <delete id="deleteByPrimaryKey" parameterType="cn.yxy.domain.RolePermissionKey">
+    <delete id="delete" parameterType="cn.yxy.domain.RolePermissionKey">
         delete from sys_roles_permissions
         where role_id = #{roleId,jdbcType=BIGINT}
         and permission_id = #{permissionId,jdbcType=BIGINT}
@@ -14,23 +14,11 @@
         insert into sys_roles_permissions (role_id, permission_id)
         values (#{roleId,jdbcType=BIGINT}, #{permissionId,jdbcType=BIGINT})
     </insert>
-    <insert id="insertSelective" parameterType="cn.yxy.domain.RolePermissionKey">
-        insert into sys_roles_permissions
-        <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="roleId != null">
-                role_id,
-            </if>
-            <if test="permissionId != null">
-                permission_id,
-            </if>
-        </trim>
-        <trim prefix="values (" suffix=")" suffixOverrides=",">
-            <if test="roleId != null">
-                #{roleId,jdbcType=BIGINT},
-            </if>
-            <if test="permissionId != null">
-                #{permissionId,jdbcType=BIGINT},
-            </if>
-        </trim>
-    </insert>
+    <select id="exists" parameterType="cn.yxy.domain.RolePermissionKey" resultType="boolean">
+        SELECT count(1)
+        FROM sys_roles_permissions
+        WHERE role_id = #{roleId,jdbcType=BIGINT}
+        AND permission_id = #{permissionId,jdbcType=BIGINT}
+    </select>
+
 </mapper>

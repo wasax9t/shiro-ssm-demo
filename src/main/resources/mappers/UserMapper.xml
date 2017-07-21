@@ -90,4 +90,11 @@
             locked   = #{locked,jdbcType=BIT}
         WHERE id = #{id,jdbcType=BIGINT}
     </update>
+
+    <select id="selectByUsername" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from sys_users
+        where username = #{username,jdbcType=VARCHAR}
+    </select>
 </mapper>

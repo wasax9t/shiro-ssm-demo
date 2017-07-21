@@ -1,7 +1,9 @@
 package cn.yxy.dao;
 
 import cn.yxy.domain.Permission;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface PermissionMapper {
     int deleteByPrimaryKey(Long id);
 

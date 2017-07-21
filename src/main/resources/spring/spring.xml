@@ -10,6 +10,8 @@
     <!-- 引入属性文件 可用ignore-unresolvable及order引入多个 -->
     <context:property-placeholder location="classpath:allInOne.properties"/>
 
-    <import resource="spring-dao.xml"/>
+    <import resource="spring-common.xml"/>
+    <import resource="spring-web.xml"/>
+    <import resource="spring-shiro.xml"/>
 
 </beans>
