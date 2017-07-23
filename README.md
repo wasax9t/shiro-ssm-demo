@@ -4,7 +4,7 @@ shiro与ssm整合demo
 主要为了学习并且速度加入到用项目
 
 
-### 现阶段
+### 现阶段20170723
 用sql文件创建数据库后, 增加jdbc的properties以连上自己的数据库
 可直接用jetty运行访问localhost:8081/shiro-demo/login
 用test增加用户后可以登录
