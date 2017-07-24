@@ -6,6 +6,7 @@ import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
@@ -60,4 +61,17 @@ public class ShiroController {
     public String admin() {
         return "success";
     }
+
+    @RequiresPermissions("p:insert")
+    @RequestMapping(value = "/p", method = RequestMethod.POST)
+    public String insert() {
+        return "success";
+    }
+
+    @RequiresPermissions("p:get")
+    @RequestMapping(value = "/p", method = RequestMethod.GET)
+    public String get() {
+        return "success";
+    }
+
 }

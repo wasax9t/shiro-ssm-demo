@@ -7,6 +7,7 @@ import cn.yxy.util.EncryptUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Service
@@ -46,11 +47,15 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Set<String> findRoles(String username) {
-        return null;
+        Set<String> roles = new HashSet<>();
+        roles.add("admin");
+        return roles;
     }
 
     @Override
     public Set<String> findPermissions(String username) {
-        return null;
+        Set<String> permissions = new HashSet<>();
+        permissions.add("p:get");
+        return permissions;
     }
 }

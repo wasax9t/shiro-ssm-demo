@@ -2,3 +2,4 @@
 /target
 shiro-demo.iml
 /src/main/resources/allInOne.properties
+/logs/

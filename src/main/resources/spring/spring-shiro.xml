@@ -8,7 +8,7 @@
     </bean>
 
     <bean id="systemAuthorizingRealm" class="cn.yxy.shiro.realm.CustomizeAuthorizingRealm">
-        <!-- 密码加密验证方式 -->
+        <!-- 密码加密验证方式, 可以把class换成自己的加密方式 -->
         <property name="credentialsMatcher">
             <bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
                 <property name="hashAlgorithmName" value="MD5"/>
